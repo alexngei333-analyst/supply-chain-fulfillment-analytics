@@ -37,7 +37,7 @@ The project implements the Medallion (Bronze -> Silver -> Gold) Architecture ins
 │   POWER BI DASHBOARD  │  --> Executive KPI tracking & DAX analytics
 └───────────────────────┘
 └───────────────────────┘
-
+```
 ---
 
 ## 🛠️ Tech Stack
