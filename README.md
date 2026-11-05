@@ -14,26 +14,28 @@ An end-to-end data engineering and business intelligence solution built using SQ
 
 The project implements the Medallion (Bronze -> Silver -> Gold) Architecture inside SQL Server to ensure raw data ingestion, structural cleansing, and dimensional modeling:
 
+```text
 [ Raw Dataset / Staged CSV ]
             │
-            ▼
+            ▼ (Python Ingestion)
 ┌───────────────────────┐
 │     BRONZE LAYER      │  --> Raw data ingestion & staging schemas
 └───────────┬───────────┘
-            │  (T-SQL ETL Stored Procedures / Cleansing)
+            │  (T-SQL ETL / Cleansing)
             ▼
 ┌───────────────────────┐
 │     SILVER LAYER      │  --> Data-typed, deduplicated, & normalized tables
 └───────────┬───────────┘
-            │  (Gold Analytical Views & Star Schema)
+            │  (Gold Views & Star Schema)
             ▼
 ┌───────────────────────┐
-│      GOLD LAYER       │  --> Business views, aggregated metrics, & star schema
+│      GOLD LAYER       │  --> Business views & aggregated metrics
 └───────────┬───────────┘
-            │  (Power BI Import / Connection)
+            │  (Power BI Connection)
             ▼
 ┌───────────────────────┐
-│   POWER BI DASHBOARD  │  --> Executive KPI tracking, DAX metrics, & visual analytics
+│   POWER BI DASHBOARD  │  --> Executive KPI tracking & DAX analytics
+└───────────────────────┘
 └───────────────────────┘
 
 ---
